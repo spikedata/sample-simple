@@ -4,6 +4,11 @@ Sample app demonstrating how to access Spike API. See full [docs](https://app.sp
 
 This sample runs all web functions using hardcoded login credentials
 
+## Requirements
+
+- [nodejs](https://nodejs.org/en/) v8+
+  - async/await used
+
 ## Register
 
 - First register for an account on [spike](https://app.spikedata.co.za/)
