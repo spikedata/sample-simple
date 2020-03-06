@@ -1,10 +1,5 @@
 const config = require("./config");
-let spikeApi = require("@spikedata/api");
-
-// HACK: for webpack'ed ./dist/pdf/app.js
-if (spikeApi.default) {
-  spikeApi = spikeApi.default;
-}
+const spikeApi = require("@spikedata/api");
 
 async function run({ APIKEY, USERKEY, FILE, PASS }) {
   try {
