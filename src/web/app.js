@@ -1,13 +1,7 @@
 const chalk = require("chalk");
+const config = require("./config");
 const scrape = require("./scrape");
 const T = require("./testAccounts");
-
-// TODO: inputs
-const APIKEY = "00000000-0000-4000-a000-000000000001";
-const USERKEY = "00000000-0000-4000-a000-000000000002";
-const NUM_DAYS = 20;
-const NUM_STATEMENTS = 1;
-const SAVE_FOLDER = "/tmp";
 
 function printHeader(site) {
   console.log(
@@ -19,7 +13,7 @@ function printHeader(site) {
   );
 }
 
-async function run() {
+async function run({ APIKEY, USERKEY, NUM_DAYS, NUM_STATEMENTS, SAVE_FOLDER }) {
   if (T.abs) {
     printHeader("ABS.0");
     await scrape(
@@ -123,4 +117,4 @@ async function run() {
   }
 }
 
-run();
+run(config);

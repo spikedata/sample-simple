@@ -1,0 +1,14 @@
+// TODO: inputs
+const APIKEY = "00000000-0000-4000-a000-000000000001";
+const USERKEY = "00000000-0000-4000-a000-000000000002";
+const NUM_DAYS = 20;
+const NUM_STATEMENTS = 1;
+const SAVE_FOLDER = "/tmp";
+
+module.exports = {
+  APIKEY,
+  USERKEY,
+  NUM_DAYS,
+  NUM_STATEMENTS,
+  SAVE_FOLDER
+};

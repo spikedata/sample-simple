@@ -1,4 +1,4 @@
-const path = require("path");
+const config = require("./config");
 let spikeApi = require("@spikedata/api");
 
 // HACK: for webpack'ed ./dist/pdf/app.js
@@ -6,15 +6,7 @@ if (spikeApi.default) {
   spikeApi = spikeApi.default;
 }
 
-// TODO: inputs
-const APIKEY = "00000000-0000-4000-a000-000000000001";
-const USERKEY = "00000000-0000-4000-a000-000000000002";
-const FILE = path.join(path.dirname(process.argv[1]), "../../data/example.pdf");
-// const FILE = path.join(path.dirname(process.argv[1]), "../../data/too-big.pdf"); // is sent, stopped by AWS
-// const FILE = path.join(path.dirname(process.argv[1]), "../../data/way-too-big.pdf"); // not sent, stopped by axios
-const PASS = undefined;
-
-async function run() {
+async function run({ APIKEY, USERKEY, FILE, PASS }) {
   try {
     // request
     console.log("requesting /pdf ...");
@@ -58,4 +50,4 @@ async function run() {
   }
 }
 
-run();
+run(config);
