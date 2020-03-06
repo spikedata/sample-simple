@@ -1,6 +1,6 @@
 const chalk = require("chalk");
 const scrape = require("./scrape");
-const T = require("./testAccounts.private");
+const T = require("./testAccounts");
 
 // TODO: inputs
 const APIKEY = "00000000-0000-4000-a000-000000000001";

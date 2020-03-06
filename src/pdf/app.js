@@ -33,10 +33,9 @@ async function run() {
       );
     }
   } catch (e) {
-    if (e instanceof SpikeApi.PdfTooLargeError) {
+    if (e instanceof spikeApi.PdfTooLargeError) {
       console.error(`EXCEPTION: the pdf is too large`);
-      return e;
-    } else if (e instanceof SpikeApi.InputValidationError) {
+    } else if (e instanceof spikeApi.InputValidationError) {
       console.error(
         "EXCEPTION: invalid inputs:\n ",
         e.validationErrors.join("\n ")
