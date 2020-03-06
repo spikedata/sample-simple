@@ -1,0 +1,28 @@
+{
+  "name": "@spikedata/sample-simple",
+  "version": "1.0.0",
+  "description": "Spike API sample",
+  "main": "src/pdf/app.js",
+  "author": "ilan@spikedata.co.za",
+  "license": "SPIKE",
+  "scripts": {
+    "start:pdf": "node ./src/pdf/app.js",
+    "start:web": "node ./src/web/app.js",
+    "prebuild": "rm -rf ./dist",
+    "build": "npm-run-all --parallel build:*",
+    "build:pdf": "webpack --progress --colors --display-modules --config ./src/pdf/webpack.config.js"
+  },
+  "dependencies": {
+    "@spikedata/api": "1.0.0",
+    "chalk": "3.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-core": "6.26.3",
+    "babel-loader": "7.1.1",
+    "babel-preset-env": "1.7.0",
+    "babel-preset-stage-3": "6.24.1",
+    "npm-run-all": "4.1.5",
+    "webpack": "3.4.1"
+  }
+}
