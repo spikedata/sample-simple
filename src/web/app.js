@@ -1,7 +1,7 @@
 const chalk = require("chalk");
 const config = require("./config");
 const scrape = require("./scrape");
-const T = require("./testAccounts");
+const T = require("./testAccounts.private");
 
 function printHeader(site) {
   console.log(
