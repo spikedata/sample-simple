@@ -12,7 +12,7 @@ This sample runs all web functions using hardcoded login credentials
 ## Register
 
 - First register for an account on [spike](https://app.spikedata.co.za/)
-- Get your apikey and userkey from the settings page - you'll use them below
+- Get your apikey and userkey from the [settings](https://app.spikedata.co.za/dash/settings/) page - you'll use them below
 
 ## How to run
 
@@ -24,6 +24,7 @@ npm i
 # run pdf sample
 vi ./src/pdf/config.js # enter your apikey & userkey
 npm run start:pdf
+# you may want to open ./data/example.pdf in a pdf viewer at this point and compare the output visually
 
 # run all web samples
 vi ./src/web/config.js # enter your apikey & userkey
