@@ -12,7 +12,7 @@
     "build": "webpack --progress --colors --display-modules --config ./src/pdf/webpack.config.js"
   },
   "dependencies": {
-    "@spikedata/api": "1.0.1",
+    "@spikedata/api": "^1.0.2",
     "chalk": "3.0.0"
   },
   "devDependencies": {

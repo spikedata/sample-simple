@@ -144,7 +144,7 @@ module.exports = async function(
       console.log("/statements success", JSON.stringify(sanitized, null, 2));
     }
   } catch (e) {
-    if (e instanceof SpikeApi.InputValidationError) {
+    if (e instanceof spikeApi.InputValidationError) {
       console.error(
         "EXCEPTION: invalid inputs:\n ",
         e.validationErrors.join("\n ")
