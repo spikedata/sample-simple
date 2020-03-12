@@ -255,7 +255,9 @@ async function uxInputOtp() {
 
 async function loginInterimCapWait(APIKEY, USERKEY, sessionId) {
   // inputs
-  await read("Push enter to continue ...");
+  await read(
+    'Awaiting authorization from you. Please open the Capitec app and click "Yes" to "I want to to sign in to Remote Banking". Then push enter to continue ...'
+  );
 
   // request
   console.log(chalk.green("/login-interim-wait (cap) ..."));
