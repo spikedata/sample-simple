@@ -5,6 +5,10 @@
   "main": "src/pdf/app.js",
   "author": "ilan@spikedata.co.za",
   "license": "SPIKE",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spikedata/sample-simple"
+  },
   "scripts": {
     "start:pdf": "node ./src/pdf/app.js",
     "start:web": "node ./src/web/app.js",
