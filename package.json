@@ -11,6 +11,7 @@
   },
   "scripts": {
     "start:pdf": "node ./src/pdf/app.js",
+    "start:csv": "node ./src/csv/app.js",
     "start:web": "node ./src/web/app.js",
     "prebuild": "rm -rf ./dist",
     "build": "webpack --progress --colors --display-modules --config ./src/pdf/webpack.config.js"
