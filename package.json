@@ -1,6 +1,6 @@
 {
   "name": "@spikedata/sample-simple",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Spike API sample",
   "main": "src/pdf/app.js",
   "author": "ilan@spikedata.co.za",
