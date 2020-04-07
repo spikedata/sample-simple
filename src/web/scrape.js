@@ -9,7 +9,7 @@ function fail(message) {
   process.exit(-1);
 }
 
-module.exports = async function(
+module.exports = async function (
   APIKEY,
   USERKEY,
   SITE,
@@ -28,7 +28,7 @@ module.exports = async function(
     let sanitized;
 
     // login
-    console.log(chalk.green("/login ..."));
+    console.log(chalk.green(`${spikeApi.config.url.login} ...`));
     loginResponse = await spikeApi.login(
       APIKEY,
       USERKEY,
@@ -75,7 +75,7 @@ module.exports = async function(
     }
 
     // accounts
-    console.log(chalk.green("/accounts ..."));
+    console.log(chalk.green(`${spikeApi.config.url.accounts} ...`));
     let accountsResponse = await spikeApi.accounts(
       APIKEY,
       USERKEY,
@@ -89,7 +89,7 @@ module.exports = async function(
     console.log("/accounts success", JSON.stringify(sanitized, null, 2));
 
     // estatement
-    console.log(chalk.green("/estatement ..."));
+    console.log(chalk.green(`${spikeApi.config.url.estatement} ...`));
     let estatementResponse = await spikeApi.estatement(
       APIKEY,
       USERKEY,
@@ -108,7 +108,7 @@ module.exports = async function(
     console.log("/estatement success", JSON.stringify(sanitized, null, 2));
 
     // transactions
-    console.log(chalk.green("/transactions ..."));
+    console.log(chalk.green(`${spikeApi.config.url.transactions} ...`));
     let transactionsResponse = await spikeApi.transactions(
       APIKEY,
       USERKEY,
@@ -125,7 +125,7 @@ module.exports = async function(
 
     // statements
     if (spikeApi.isSupported(SITE, spikeApi.enums.FN.statements)) {
-      console.log(chalk.green("/statements ..."));
+      console.log(chalk.green(`${spikeApi.config.url.statements} ...`));
       let statementsResponse = await spikeApi.statements(
         APIKEY,
         USERKEY,
@@ -169,7 +169,7 @@ module.exports = async function(
     // NOTE: if you set autoClose=true above then spike will close the session automatically after /statements completed
     //  and you can skip manual /close below
     if (loginResponse && !autoClose) {
-      console.log(chalk.green("/close ..."));
+      console.log(chalk.green(`${spikeApi.config.url.close} ...`));
       let closeResponse = await spikeApi.close(
         APIKEY,
         USERKEY,
@@ -202,11 +202,13 @@ async function loginInterimAbsPass(
   let data = [
     PASS[requiredChars[0]],
     PASS[requiredChars[1]],
-    PASS[requiredChars[2]]
+    PASS[requiredChars[2]],
   ];
 
   // request
-  console.log(chalk.green("/login-interim-input (abs) ..."));
+  console.log(
+    chalk.green(`${spikeApi.config.url["login-interim-input"]} (abs) ...`)
+  );
   let response = await spikeApi.loginInterimInputAbsPass(
     APIKEY,
     USERKEY,
@@ -229,7 +231,9 @@ async function loginInterimStdOtp(APIKEY, USERKEY, sessionId) {
   let data = await uxInputOtp();
 
   // request
-  console.log(chalk.green("/login-interim-input (std) ..."));
+  console.log(
+    chalk.green(`${spikeApi.config.url["login-interim-input"]} (std) ...`)
+  );
   let response = await spikeApi.loginInterimInputStdOtp(
     APIKEY,
     USERKEY,
@@ -260,7 +264,9 @@ async function loginInterimCapWait(APIKEY, USERKEY, sessionId) {
   );
 
   // request
-  console.log(chalk.green("/login-interim-wait (cap) ..."));
+  console.log(
+    chalk.green(`${spikeApi.config.url["login-interim-wait"]} (cap) ...`)
+  );
   let response = await spikeApi.loginInterimWait(
     APIKEY,
     USERKEY,
@@ -280,11 +286,11 @@ async function loginInterimCapWait(APIKEY, USERKEY, sessionId) {
 async function read(message) {
   const rl = readline.createInterface({
     input: process.stdin,
-    output: process.stdout
+    output: process.stdout,
   });
 
-  return await new Promise(resolve => {
-    rl.question(message, answer => {
+  return await new Promise((resolve) => {
+    rl.question(message, (answer) => {
       resolve(answer);
       rl.close();
     });

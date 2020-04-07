@@ -4,7 +4,7 @@ import spikeApi from "@spikedata/api";
 async function run({ APIKEY, USERKEY, FILE, PASS }) {
   try {
     // request
-    console.log("requesting /pdf ...");
+    console.log(`requesting ${spikeApi.config.url.pdf} ...`);
     let spikeResponse = await spikeApi.pdf(APIKEY, USERKEY, FILE, PASS);
 
     // process response
