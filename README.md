@@ -29,5 +29,6 @@ npm run start:pdf
 # run all web samples
 vi ./src/web/config.js # enter your apikey & userkey
 vi ./src/web/testAccounts.js # enter your login credentials for one or more internet banking accounts
-npm run start:web
+npm run start:web # run all sites configured in testAccounts.js
+npm run start:web -- ned # run single site = nedbank (configured in testAccounts.js)
 ```
