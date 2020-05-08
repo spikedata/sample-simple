@@ -1,5 +1,5 @@
 import config from "./config.mjs";
-import spikeApi from "@spikedata/api";
+import spikeApi from "@spike/api";
 
 async function run({ APIKEY, USERKEY, FILE, PASS }) {
   try {

@@ -1,13 +1,5 @@
 const config = require("./config");
-let spikeApi = require("@spikedata/api");
-
-// HACK: for webpack'ed ./dist/pdf/app.js
-// - when require()d in src app (./sample-simple/src/pdf/app.js) uses `main` = `@spikedata/api/src/main.js`
-// - when require()d in webpacked app (./sample-simple/dist/pdf/app.js) uses `module` = @spikedata/api/dist/spike-api.esm.mjs`
-// - see `npm run build`
-if (spikeApi.default) {
-  spikeApi = spikeApi.default;
-}
+const spikeApi = require("@spike/api");
 
 async function run({ APIKEY, USERKEY, FILE, PASS }) {
   try {
