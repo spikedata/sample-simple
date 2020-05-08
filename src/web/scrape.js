@@ -2,7 +2,7 @@ const chalk = require("chalk");
 const fs = require("fs");
 const path = require("path");
 const readline = require("readline");
-const spikeApi = require("@spikedata/api");
+const spikeApi = require("@spike/api");
 
 function fail(message) {
   console.log(message);

@@ -1,5 +1,5 @@
 {
-  "name": "@spikedata/sample-simple",
+  "name": "@spike/sample-simple",
   "version": "1.0.1",
   "description": "Spike API sample",
   "main": "src/pdf/app.js",
@@ -17,7 +17,7 @@
     "build": "webpack --progress --colors --display-modules --config ./src/pdf/webpack.config.js"
   },
   "dependencies": {
-    "@spikedata/api": "^1.0.2",
+    "@spike/api": "^1.0.0",
     "chalk": "3.0.0"
   },
   "devDependencies": {
