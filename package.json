@@ -17,7 +17,7 @@
     "build": "webpack --progress --colors --display-modules --config ./src/pdf/webpack.config.js"
   },
   "dependencies": {
-    "@spike/api": "^1.0.0",
+    "@spike/api": "*",
     "chalk": "^4.0.0"
   },
   "devDependencies": {
